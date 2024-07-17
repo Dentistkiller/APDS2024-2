@@ -16,6 +16,6 @@ try {
   console.error(e);
 }
 
-let db = client.db("fruits");
+let db = client.db("APDS2024");
 
 export default db;

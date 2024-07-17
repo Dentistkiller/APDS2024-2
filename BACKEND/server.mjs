@@ -1,7 +1,7 @@
 import https from "https";
 import http from "http";
 import fs from "fs";
-import fruits from "./routes/fruit.mjs";
+import posts from "./routes/post.mjs";
 import users from "./routes/user.mjs";
 import express from "express"
 import cors from "cors"
@@ -25,8 +25,8 @@ app.use((reg,res,next)=>
     next();
 })
  
-app.use("/fruit", fruits);
-app.route("/fruit", fruits);
+app.use("/post", posts);
+app.route("/post", posts);
 app.use("/user", users);
 app.route("/user", users);
 

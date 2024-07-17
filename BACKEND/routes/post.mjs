@@ -13,10 +13,11 @@ router.get("/", async (req, res) => {
 });
 
 // Create a new record.
-router.post("/post", checkauth, async (req, res) => {
+router.post("/upload", checkauth, async (req, res) => {
     let newDocument = {
-      name: req.body.name,
-      comment: req.body.comment
+      user: req.body.user,
+      content: req.body.content,
+      image: req.body.image
     };
     let collection = await db.collection("posts");
     let result = await collection.insertOne(newDocument);
