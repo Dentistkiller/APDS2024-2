@@ -1,5 +1,4 @@
 import https from "https";
-import http from "http";
 import fs from "fs";
 import posts from "./routes/post.mjs";
 import users from "./routes/user.mjs";
@@ -24,7 +23,7 @@ app.use((reg,res,next)=>
     res.setHeader('Access-Control-Allow-Methods', '*');
     next();
 })
- 
+ //localhost:3001/user/signup
 app.use("/post", posts);
 app.route("/post", posts);
 app.use("/user", users);

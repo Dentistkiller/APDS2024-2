@@ -37,7 +37,7 @@ export default function CreatePost() {
       try {
         const reader = new FileReader();
         reader.onloadend = () => {
-          const base64String = reader.result.split(",")[1]; // Remove the 'data:image/*;base64,' part
+          const base64String = reader.result.split(",")[1]; 
           updateForm({ image: base64String });
         };
         reader.readAsDataURL(file);
@@ -60,7 +60,7 @@ export default function CreatePost() {
     };
 
     try {
-      const response = await fetch("https://localhost:3001/post/upload", {  // Changed to http for local development
+      const response = await fetch("https://localhost:3001/post/upload", { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,12 +70,12 @@ export default function CreatePost() {
       });
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Please Login");
       }
 
       const result = await response.json();
       console.log("Post created:", result);
-      //setForm({ user: form.user, content: "", image: "" });  // Reset form but keep user
+      setForm({ user: form.user, content: "", image: "" });  // Reset form but keep user
       navigate("/");
     } catch (error) {
       window.alert(error);

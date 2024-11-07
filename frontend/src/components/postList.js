@@ -4,7 +4,7 @@ import '../App.css';
 
 const Post = (props) => (
   <tr>
-        <td>{props.post.user}</td>
+    <td>{props.post.user}</td>
     <td>{props.post.content}</td>
     <td>
       {props.post.image && (
@@ -14,7 +14,7 @@ const Post = (props) => (
           style={{ maxWidth: '100px', maxHeight: '100px', objectFit: 'cover' }}  // Ensure the image fits within the size limits
         />
       )}
-    </td>
+    </td>3
     <td>
       <button className="btn btn-link"
         onClick={() => {
@@ -64,6 +64,7 @@ export default function PostList() {
     setPosts(newPosts);
   }
   
+
   // This method will map out the posts on the table
   function PostList() {
     return posts.map((post) => {
@@ -87,7 +88,7 @@ export default function PostList() {
             <th>User</th>
             <th>Caption</th>
             <th>Image</th>
-            <th>Actions</th>  {/* Added column for actions */}
+            <th>Actions</th>  
           </tr>
         </thead>
         <tbody>{PostList()}</tbody>
